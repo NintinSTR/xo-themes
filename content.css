@@ -1,0 +1,49 @@
+#xot-bg{position:fixed!important;inset:0!important;z-index:-1!important;pointer-events:none!important;display:block!important;transition:opacity .4s}
+html.xot-on,html.xot-on body{background:transparent!important}
+#xot-deek-layer{position:fixed;inset:0;z-index:2147483600;pointer-events:none;overflow:hidden}
+#xot-deek-layer .xot-deek{position:absolute;left:0;top:0;will-change:transform}
+#xot-deek-layer .xot-deek-body{position:absolute;inset:0;transform-origin:50% 100%;will-change:transform}
+#xot-deek-layer .xot-deek-body img{width:100%;height:100%;display:block;pointer-events:auto;cursor:grab;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));touch-action:none}
+#xot-deek-layer .xot-deek-body img:active{cursor:grabbing}
+#xot-deek-layer .xot-deek-shadow{position:absolute;left:18%;right:18%;bottom:-4px;height:8px;border-radius:50%;background:rgba(0,0,0,.6);filter:blur(3px);opacity:.35}
+#xot-deek-layer .xot-deek-board{position:absolute;left:52%;top:3%;width:44%;height:26%;display:none;align-items:center;justify-content:center;transform:rotate(6deg);font:900 calc(var(--xs,112px) * .12)/1 Rubik,Figtree,system-ui,sans-serif;color:#2a1a5e;letter-spacing:.02em;pointer-events:none;text-align:center}
+#xot-deek-layer .xot-deek-bubble{position:absolute;left:50%;bottom:calc(100% + 6px);white-space:nowrap;padding:6px 11px;border-radius:14px;background:#fff;color:#1d1236;font:700 13px/1.2 Figtree,Rubik,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.22);border:2px solid #1d1236;opacity:0;transform:translate(-50%,0);transition:opacity .18s;pointer-events:none}
+#xot-deek-layer .xot-deek-bubble.on{opacity:1}
+#xot-deek-layer .xot-deek-bubble::after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:#1d1236}
+#xot-deek-layer .xot-deek-fx{position:absolute;inset:0;pointer-events:none}
+#xot-deek-layer .xot-feather{position:absolute;font-size:14px;color:#a99cff;pointer-events:none}
+#xot-media{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;object-fit:cover!important;z-index:-1!important;pointer-events:none!important;display:block!important;transition:opacity .4s}
+@keyframes xotPulse{0%,100%{filter:drop-shadow(0 0 2px var(--xot-accent,#d7f25b)) drop-shadow(0 0 4px var(--xot-accent,#d7f25b))}50%{filter:drop-shadow(0 0 5px var(--xot-accent,#d7f25b)) drop-shadow(0 0 12px var(--xot-accent,#d7f25b))}}
+.xot-glow{animation:xotPulse 2.4s ease-in-out infinite!important}
+#xot-deek-layer .xot-deek-broom{position:absolute;left:-30%;width:150%;bottom:11%;height:18%;z-index:2;display:none;pointer-events:none;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}
+#xot-deek-layer .xot-deek.riding .xot-deek-broom{display:block}
+#xot-deek-layer .xot-deek-legs{position:absolute;left:40%;width:34%;bottom:-6%;height:26%;display:none;pointer-events:none;z-index:3}
+#xot-deek-layer .xot-deek.riding .xot-deek-legs{display:block}
+#xot-deek-layer .xot-deek.riding .xot-deek-body img{clip-path:inset(0 0 19% 0)}
+#xot-deek-layer .xot-deek.seated .xot-deek-broom,#xot-deek-layer .xot-deek.seated .xot-deek-legs{display:none!important}
+#xot-deek-layer .xot-deek.seated .xot-deek-body img{clip-path:none!important}
+#xot-deek-layer .xot-deek-acc{position:absolute;inset:0;pointer-events:none;z-index:4}
+#xot-deek-layer .xot-acc-hat{position:absolute;left:28%;top:-11%;width:44%;height:24%}
+#xot-deek-layer .xot-acc-glasses{position:absolute;left:31%;top:14.5%;width:38%;height:9%;display:none}
+#xot-deek-layer .xot-acc-tie{position:absolute;left:40%;top:33%;width:20%;height:16%}
+#xot-deek-layer [data-outfit=santa] .xot-acc-tie,#xot-deek-layer [data-outfit=hoodie] .xot-acc-tie{left:34%;top:31%;width:30%;height:10%}
+#xot-deek-layer .xot-acc-prop{position:absolute;left:4%;top:44%;font-size:calc(var(--xs,112px)*.2);line-height:1}
+#xot-deek-layer .xot-deek.hot .xot-acc-glasses{display:block}
+#xot-deek-layer .xot-deek.hot .xot-deek-body img{filter:drop-shadow(0 0 6px #ffd23f) drop-shadow(0 0 16px #ffb800)!important}
+#xot-deek-layer .xot-deek.seated .xot-acc-hat{left:44%;top:-6%;width:30%;height:20%}
+#xot-deek-layer .xot-deek.seated .xot-acc-glasses{left:47%;top:11%;width:24%;height:7%}
+#xot-deek-layer .xot-deek.seated .xot-acc-tie,#xot-deek-layer .xot-deek.seated .xot-acc-prop{display:none}
+#xot-deek-layer .xot-deek-cloud{position:absolute;left:50%;bottom:calc(100% + 2px);width:70px;height:60px;margin-left:-35px;display:none;pointer-events:none}
+#xot-deek-layer .xot-deek.rainy .xot-deek-cloud{display:block}
+#xot-deek-layer .xot-deek-cloud .c{font-size:44px;line-height:1;text-align:center;filter:grayscale(.6) brightness(.8)}
+#xot-deek-layer .xot-deek-cloud i{position:absolute;top:34px;width:2px;height:9px;border-radius:2px;background:#7ab8ff;animation:xotRain .7s linear infinite}
+#xot-deek-layer .xot-deek-cloud i:nth-child(2){left:20px}#xot-deek-layer .xot-deek-cloud i:nth-child(3){left:31px;animation-delay:.25s}#xot-deek-layer .xot-deek-cloud i:nth-child(4){left:42px;animation-delay:.5s}#xot-deek-layer .xot-deek-cloud i:nth-child(5){left:52px;animation-delay:.12s}
+@keyframes xotRain{from{transform:translateY(0);opacity:1}to{transform:translateY(34px);opacity:0}}
+#xot-deek-layer .xot-deek.rainy .xot-deek-bubble{bottom:calc(100% + 58px)}
+#xot-deek-layer .xot-buddy{position:absolute;left:0;top:0;font-size:26px;line-height:1;pointer-events:none;will-change:transform}
+#xot-deek-layer .xot-buddy span{display:inline-block}
+#xot-fx{position:fixed;inset:0;z-index:2147483601;pointer-events:none}
+#xot-win{position:fixed;left:50%;top:22%;transform:translate(-50%,-20px) scale(.8);z-index:2147483602;padding:16px 26px;border-radius:20px;background:linear-gradient(135deg,#d7f25b,#ffd23f);color:#1a1033;font:900 28px/1.1 Figtree,Rubik,system-ui,sans-serif;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35);border:3px solid #1a1033;opacity:0;transition:opacity .25s,transform .35s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+#xot-win small{display:block;font-size:14px;font-weight:800;margin-top:4px;opacity:.8}
+#xot-win.on{opacity:1;transform:translate(-50%,0) scale(1)}
+html.xot-focus #xot-bg,html.xot-focus #xot-media,html.xot-focus #xot-deek-layer{display:none!important}

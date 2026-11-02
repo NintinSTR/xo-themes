@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "XO Themes + Deek",
+  "version": "1.6.0",
+  "description": "Live ASCII wallpapers for your XO Market dashboard, with Deek roaming around.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "XO Themes",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.xo.market/*",
+        "*://xo.market/*"
+      ],
+      "js": [
+        "scenes.js",
+        "deek.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "deek/*.webp",
+        "icons/*.png"
+      ],
+      "matches": [
+        "*://*.xo.market/*",
+        "*://xo.market/*"
+      ]
+    }
+  ]
+}
